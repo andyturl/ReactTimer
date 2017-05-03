@@ -25489,19 +25489,20 @@
 	'use strict';
 
 	var React = __webpack_require__(8);
-	var Nav = __webpack_require__(230);
+	var Navigation = __webpack_require__(230);
 
 	var Main = function Main(props) {
 	    return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(Nav, null),
+	        React.createElement(Navigation, null),
 	        React.createElement(
 	            'div',
 	            { className: 'row' },
 	            React.createElement(
 	                'div',
 	                { className: 'columns medium-6 large-4 small-centered' },
+	                'Main.jsx',
 	                props.children
 	            )
 	        )
@@ -25522,49 +25523,63 @@
 	    Link = _require.Link,
 	    IndexLink = _require.IndexLink;
 
-	var Nav = React.createClass({
-	    displayName: 'Nav',
-
-	    render: function render() {
-	        return React.createElement(
+	var Navigation = function Navigation() {
+	    return React.createElement(
+	        'div',
+	        { className: 'top-bar' },
+	        React.createElement(
 	            'div',
-	            { className: 'top-bar' },
+	            { className: 'top-bar-left' },
 	            React.createElement(
-	                'div',
-	                { className: 'top-bar-left' },
+	                'ul',
+	                { className: 'menu' },
 	                React.createElement(
-	                    'ul',
-	                    { className: 'menu' },
+	                    'li',
+	                    { className: 'menu-text' },
+	                    'React Timer App'
+	                ),
+	                React.createElement(
+	                    'li',
+	                    null,
 	                    React.createElement(
-	                        'li',
-	                        { className: 'menu-text' },
-	                        'React Timer App'
-	                    ),
+	                        IndexLink,
+	                        { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                        'Timer'
+	                    )
+	                ),
+	                React.createElement(
+	                    'li',
+	                    null,
 	                    React.createElement(
-	                        'li',
-	                        null,
-	                        React.createElement(
-	                            IndexLink,
-	                            { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                            'Timer'
-	                        )
-	                    ),
-	                    React.createElement(
-	                        'li',
-	                        null,
-	                        React.createElement(
-	                            Link,
-	                            { to: '/countdown', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                            'Countdown'
-	                        )
+	                        Link,
+	                        { to: '/countdown', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                        'Countdown'
 	                    )
 	                )
 	            )
-	        );
-	    }
-	});
+	        ),
+	        React.createElement(
+	            'div',
+	            { className: 'top-bar-right' },
+	            React.createElement(
+	                'ul',
+	                { className: 'menu' },
+	                React.createElement(
+	                    'li',
+	                    { className: 'menu-text' },
+	                    'Created by ',
+	                    React.createElement(
+	                        'a',
+	                        { href: 'http://www.apple.com', target: '_blank' },
+	                        'Andy'
+	                    )
+	                )
+	            )
+	        )
+	    );
+	};
 
-	module.exports = Nav;
+	module.exports = Navigation;
 
 /***/ }),
 /* 231 */
@@ -25994,7 +26009,7 @@
 
 
 	// module
-	exports.push([module.id, ".page-title {\n  color: #555;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\ninput[type=search] {\n  box-shadow: none; }\n", ""]);
+	exports.push([module.id, ".top-bar,\n.top-bar ul {\n  background-color: #333; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.top-bar .active-link {\n  font-weight: bold; }\n", ""]);
 
 	// exports
 
