@@ -121,7 +121,7 @@
 	        { path: '/', component: Main },
 	        React.createElement(Route, { path: 'timer', component: Timer }),
 	        React.createElement(Route, { path: 'countdown', component: Countdown }),
-	        React.createElement(IndexRoute, { component: Countdown })
+	        React.createElement(IndexRoute, { component: Timer })
 	    )
 	), document.getElementById('app'));
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
