@@ -24,13 +24,8 @@ module.exports = {
         alias: {
             Main: 'app/components/Main.jsx',
             Nav: 'app/components/Nav.jsx',
-            Weather: 'app/components/Weather.jsx',
-            WeatherForm: 'app/components/WeatherForm.jsx',
-            WeatherMessage: 'app/components/WeatherMessage.jsx',
-            ErrorModal: 'app/components/ErrorModal.jsx',
-            openWeatherMap: 'app/api/openWeatherMap.jsx',
-            About: 'app/components/About.jsx',
-            Examples: 'app/components/Examples.jsx',
+            Countdown: 'app/components/Countdown.jsx',
+            Timer: 'app/components/Timer.jsx',
             applicationStyles: 'app/styles/app.scss'
         },
         extensions: ['', '.js', '.jsx']
