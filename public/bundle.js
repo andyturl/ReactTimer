@@ -25860,6 +25860,10 @@
 	            }
 	        }
 	    },
+	    componentWillUnmount: function componentWillUnmount() {
+	        clearInterval(this.timer);
+	        this.timer = undefined;
+	    },
 	    handleStatusChange: function handleStatusChange(newStatus) {
 	        this.setState({
 	            timerStatus: newStatus
@@ -25946,7 +25950,7 @@
 	            renderStartStopButton(),
 	            React.createElement(
 	                'button',
-	                { className: 'button secondary alert', onClick: this.onStatusChange('stopped') },
+	                { className: 'button secondary alert hollow', onClick: this.onStatusChange('stopped') },
 	                'Clear'
 	            )
 	        );

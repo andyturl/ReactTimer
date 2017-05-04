@@ -24,7 +24,7 @@ var TimerControls = React.createClass({
         return (
             <div className="controls">
                 {renderStartStopButton()}
-                <button className="button secondary alert" onClick={this.onStatusChange('stopped')}>Clear</button>
+                <button className="button secondary alert hollow" onClick={this.onStatusChange('stopped')}>Clear</button>
             </div>
         )
     }
