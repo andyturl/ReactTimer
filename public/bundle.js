@@ -108,10 +108,10 @@
 	var Timer = __webpack_require__(235);
 
 	// Load foundation
-	__webpack_require__(237);
+	__webpack_require__(236);
 	$(document).foundation();
 
-	__webpack_require__(241);
+	__webpack_require__(240);
 
 	ReactDOM.render(React.createElement(
 	    Router,
@@ -25801,7 +25801,7 @@
 	                    { className: 'button secondary', onClick: _this2.onStatusChange('paused') },
 	                    'Pause'
 	                );
-	            } else if (countdownStatus === 'paused') {
+	            } else {
 	                return React.createElement(
 	                    'button',
 	                    { className: 'button primary', onClick: _this2.onStatusChange('started') },
@@ -25833,7 +25833,7 @@
 
 	var React = __webpack_require__(8);
 	var Clock = __webpack_require__(232);
-	var TimerControls = __webpack_require__(236);
+	var Controls = __webpack_require__(234);
 
 	var Timer = React.createClass({
 	    displayName: 'Timer',
@@ -25848,7 +25848,7 @@
 	        if (this.state.timerStatus !== prevState.timerStatus) {
 	            switch (this.state.timerStatus) {
 	                case 'started':
-	                    this.startTimer();
+	                    this.handleStart();
 	                    break;
 	                case 'stopped':
 	                    this.setState({ count: 0 });
@@ -25869,7 +25869,7 @@
 	            timerStatus: newStatus
 	        });
 	    },
-	    startTimer: function startTimer() {
+	    handleStart: function handleStart() {
 	        var _this = this;
 
 	        this.timer = setInterval(function () {
@@ -25893,7 +25893,7 @@
 	                'Timer App'
 	            ),
 	            React.createElement(Clock, { totalSeconds: count }),
-	            React.createElement(TimerControls, { timerStatus: timerStatus, onStatusChange: this.handleStatusChange })
+	            React.createElement(Controls, { countdownStatus: timerStatus, onStatusChange: this.handleStatusChange })
 	        );
 	    }
 	});
@@ -25904,72 +25904,13 @@
 /* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	var React = __webpack_require__(8);
-
-	var TimerControls = React.createClass({
-	    displayName: 'TimerControls',
-
-	    propTypes: {
-	        timerStatus: React.PropTypes.string.isRequired,
-	        onStatusChange: React.PropTypes.func.isRequired
-	    },
-	    onStatusChange: function onStatusChange(newStatus) {
-	        var _this = this;
-
-	        return function () {
-	            _this.props.onStatusChange(newStatus);
-	        };
-	    },
-	    render: function render() {
-	        var _this2 = this;
-
-	        var timerStatus = this.props.timerStatus;
-
-
-	        var renderStartStopButton = function renderStartStopButton() {
-	            if (timerStatus === 'started') {
-	                return React.createElement(
-	                    'button',
-	                    { className: 'button secondary', onClick: _this2.onStatusChange('paused') },
-	                    'Pause'
-	                );
-	            } else if (timerStatus === 'paused' || timerStatus === 'stopped') {
-	                return React.createElement(
-	                    'button',
-	                    { className: 'button primary', onClick: _this2.onStatusChange('started') },
-	                    'Start'
-	                );
-	            }
-	        };
-
-	        return React.createElement(
-	            'div',
-	            { className: 'controls' },
-	            renderStartStopButton(),
-	            React.createElement(
-	                'button',
-	                { className: 'button secondary alert hollow', onClick: this.onStatusChange('stopped') },
-	                'Clear'
-	            )
-	        );
-	    }
-	});
-
-	module.exports = TimerControls;
-
-/***/ }),
-/* 237 */
-/***/ (function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(238);
+	var content = __webpack_require__(237);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(240)(content, {});
+	var update = __webpack_require__(239)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -25986,10 +25927,10 @@
 	}
 
 /***/ }),
-/* 238 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(239)();
+	exports = module.exports = __webpack_require__(238)();
 	// imports
 
 
@@ -26000,7 +25941,7 @@
 
 
 /***/ }),
-/* 239 */
+/* 238 */
 /***/ (function(module, exports) {
 
 	/*
@@ -26056,7 +25997,7 @@
 
 
 /***/ }),
-/* 240 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -26308,16 +26249,16 @@
 
 
 /***/ }),
-/* 241 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(242);
+	var content = __webpack_require__(241);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(240)(content, {});
+	var update = __webpack_require__(239)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26334,10 +26275,10 @@
 	}
 
 /***/ }),
-/* 242 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(239)();
+	exports = module.exports = __webpack_require__(238)();
 	// imports
 
 
